@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="DavuxLibSL.PushWidget"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pgbar="clr-namespace:Microsoft.Phone.Controls;assembly=DavuxLibSL" 
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" 
+    xmlns:toolkitPrimitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:dxl="clr-namespace:DavuxLibSL;assembly=DavuxLibSL"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    Width="400" >
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <toolkit:PerformanceProgressBar x:Name="progress" Grid.Row="0" />
+        <TextBlock Grid.Row="1">Push Notifications:</TextBlock>
+
+        <toolkit:ToggleSwitch Name="toggle" Click="ToggleSwitch_Checked" Grid.Row="2" />
+        
+        <Grid Margin="0,0,36,12" Grid.Row="3">
+            <TextBlock>Status:</TextBlock>
+            <TextBlock HorizontalAlignment="Right" Name="lblStatus" Text="Undefined" />
+        </Grid>
+        <Grid Margin="23,0,36,12" Grid.Row="4">
+            <TextBlock HorizontalAlignment="Right" Name="lblLastStatus" Text=" " />
+        </Grid>
+        <Grid Margin="23,0,36,12" Grid.Row="5">
+            <TextBlock HorizontalAlignment="Right" Name="lblError" Text=" " />
+        </Grid>
+
+    </Grid>
+</UserControl>
